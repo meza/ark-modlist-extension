@@ -1,0 +1,24 @@
+{
+  "name": "Ark Modlist Grabber",
+  "version": "1.0",
+  "description": "Grab a modlist from a collection",
+  "manifest_version": 2,
+  "permissions": [
+    "clipboardWrite",
+    "clipboardRead",
+    "contextMenus",
+    "activeTab",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "js": ["content_script.js"],
+      "matches": ["https://steamcommunity.com/sharedfiles/filedetails/*"],
+      "run_at": "document_idle"
+    }
+  ]
+}
